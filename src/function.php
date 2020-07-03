@@ -2,7 +2,7 @@
 
 namespace Fluwork\Deprecation;
 
-if (!function_exists(__NAMESPACE__ . '\trigger_deprecation')) {
+if (!\function_exists(__NAMESPACE__ . '\trigger_deprecation')) {
     /**
      * Prints a deprecation message.
      *
@@ -24,13 +24,13 @@ if (!function_exists(__NAMESPACE__ . '\trigger_deprecation')) {
         string $changeVersion,
         ...$args
     ): void {
-        trigger_error(sprintf(
+        \trigger_error(\sprintf(
             'Since "%s" %s, %s is deprecated: %s in version %s',
             $package,
             $depreciationVersion,
             $depreciation,
-            vsprintf($message, $args),
+            \vsprintf($message, $args),
             $changeVersion
-        ), E_USER_DEPRECATED);
+        ), \E_USER_DEPRECATED);
     }
 }

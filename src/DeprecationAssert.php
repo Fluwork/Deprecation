@@ -31,12 +31,12 @@ trait DeprecationAssert
         ...$args
     ): void {
         $this->expectDeprecation();
-        $this->expectDeprecationMessage(sprintf(
+        $this->expectDeprecationMessage(\sprintf(
             'Since "%s" %s, %s is deprecated: %s in version %s',
             $package,
             $depreciationVersion,
             $depreciation,
-            vsprintf($message, $args),
+            \vsprintf($message, $args),
             $changeVersion
         ));
     }
