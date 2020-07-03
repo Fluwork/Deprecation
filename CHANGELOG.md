@@ -6,3 +6,4 @@ This changelog follows [the "Changelog specification" 1.0.0 *beta 2*](https://gi
 
 ### Added
 - `trigger_deprecation` function.
+- `DeprecationAssert` class: helper to test if a deprecation was triggered for testing.
